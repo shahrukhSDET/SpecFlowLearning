@@ -99,10 +99,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Hovering on SBI Loans", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.And("clicking on Vehicle loan", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
- testRunner.Then("Routing on Agricultural & Rural page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Clicking on Agri_Rural link from AutoLoans page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

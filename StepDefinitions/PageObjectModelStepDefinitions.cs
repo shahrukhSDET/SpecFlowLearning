@@ -12,11 +12,12 @@ namespace SpecFlowLearning.StepDefinitions
 
         HomePage homePage;
         AutoLoans autoloans;
-           
+        AgriculturalLoan agriculturalLoan;
+
 
 
         //constructor
-        public PageObjectModelStepDefinitions(IWebDriver driver) 
+        public PageObjectModelStepDefinitions(IWebDriver driver)
         {
             this.driver = driver;
         }
@@ -37,19 +38,24 @@ namespace SpecFlowLearning.StepDefinitions
             homePage = new HomePage(driver);
             autoloans = homePage.Sbiloan();
             Thread.Sleep(5000);
+
+            autoloans = new AutoLoans(driver);
+            agriculturalLoan = autoloans.GetlinkofAgri_rural();
+
+
         }
 
-        [When(@"clicking on Vehicle loan")]
-        public void WhenClickingOnVehicleLoan()
+
+        [Then(@"Clicking on Agri_Rural link fromAutoLoans page")]
+        public void ClickingonAgri_RurallinkfromAutoLoanspage()
         {
-            
+            //autoloans = new AutoLoans(driver);
+            //agriculturalLoan = autoloans.GetlinkofAgri_rural();
+
+
         }
 
-        [Then(@"Routing on Agricultural & Rural page")]
-        public void ThenRoutingOnAgriculturalRuralPage()
-        {
-          
-            
-        }
+
+
     }
 }

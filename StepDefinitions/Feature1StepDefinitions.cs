@@ -59,7 +59,7 @@ namespace SpecFlowLearning.StepDefinitions
             Thread.Sleep(6000);
             //Assert.IsTrue(GenericHelper.IsElementPresent(By.XPath("//h4[@class='my-0 py-0']//a[@href='https://www.microsoft.com/en-us/d/xbox-series-x/8wj714n3rbtl']")));
             IWebElement explore_condition = driver.FindElement(By.XPath("//ul[@class='nav']/li[2]//a[text()='Explore']"));
-            Assert.AreEqual("Explore Microsoft.com", driver.Title, "xxzzx");
+            Assert.AreEqual("Explore Microsoft.com", driver.Title);
             Assert.AreEqual("Explore", explore_condition.Text);
 
         }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Internal;
 using System;
@@ -21,7 +22,7 @@ namespace SpecFlowLearning.Pages
         }
 
         //IWebElement sbi_loan_button = driver.FindElement(By.XPath("//a[text()='SBI Loans']"));
-        string hower1 ="//ul[@class='dropdown-menu sm-nowrap']//li[1]";
+        //string hower1 ="//ul[@class='dropdown-menu sm-nowrap']//li[1]";
         //By hower2 = By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[2]");
         //By hower3 = By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[3]");
         //By hower4 = By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[4]");
@@ -56,19 +57,26 @@ namespace SpecFlowLearning.Pages
             driver.FindElement(hower5);
             Thread.Sleep(1000);
             */
+            int currentwindowhandle = driver.WindowHandles.Count;
+            TestContext.Progress.WriteLine("Current window number is " + currentwindowhandle);
+
+
             Actions actions = new Actions(driver);
             actions.MoveToElement(hower1).MoveToElement(hower2).MoveToElement(hower3).MoveToElement(hower4).MoveToElement(hower5).Click().Perform();
             return new AutoLoans(driver);
 
+            
+
+
         }
 
-        
-        
-
-        
 
 
-        
+
+
+
+
+
 
 
 

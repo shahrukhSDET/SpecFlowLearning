@@ -49,9 +49,10 @@ namespace SpecFlowLearning.StepDefinitions
         [Then(@"Clicking on Agri_Rural link fromAutoLoans page")]
         public void ClickingonAgri_RurallinkfromAutoLoanspage()
         {
-            //autoloans = new AutoLoans(driver);
-            //agriculturalLoan = autoloans.GetlinkofAgri_rural();
 
+            //autoloans = new AutoLoans(driver);
+            //agriculturalLoan = autoloans.GetTitle();
+ 
 
         }
 

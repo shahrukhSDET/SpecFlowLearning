@@ -29,17 +29,10 @@ namespace SpecFlowLearning.Pages
         //By hower5 = By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[5]");
 
 
+        
 
         public AutoLoans Sbiloan()
         {
-            driver.FindElement(By.XPath("//a[text()='SBI Loans']")).Click();
-
-            IWebElement hower1 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[1]"));
-            IWebElement hower2 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[2]"));
-            IWebElement hower3 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[3]"));
-            IWebElement hower4 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[4]"));
-            IWebElement hower5 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[5]"));
-
 
             /*driver.FindElement(sbi_loan_button).Click();
             Actions actions = new Actions(driver);
@@ -57,21 +50,33 @@ namespace SpecFlowLearning.Pages
             driver.FindElement(hower5);
             Thread.Sleep(1000);
             */
+
             int currentwindowhandle = driver.WindowHandles.Count;
             TestContext.Progress.WriteLine("Current window number is " + currentwindowhandle);
 
+            driver.FindElement(By.XPath("//a[text()='SBI Loans']")).Click();
+
+
+            IWebElement hower1 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[1]"));
+            IWebElement hower2 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[2]"));
+            IWebElement hower3 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[3]"));
+            IWebElement hower4 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[4]"));
+            IWebElement hower5 = driver.FindElement(By.XPath("//ul[@class='dropdown-menu sm-nowrap']//li[5]"));
 
             Actions actions = new Actions(driver);
+
             actions.MoveToElement(hower1).MoveToElement(hower2).MoveToElement(hower3).MoveToElement(hower4).MoveToElement(hower5).Click().Perform();
             return new AutoLoans(driver);
 
-            
-
-
         }
 
+        //public AutoLoans login()
+        //{
+        //    driver.FindElement(By.XPath("//a[@href='https://retail.onlinesbi.sbi/retail/login.htm']")).Click();
+        //    return new AutoLoans(driver);
+        //}
 
-
+        
 
 
 

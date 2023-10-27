@@ -35,13 +35,19 @@ namespace SpecFlowLearning.StepDefinitions
         [When(@"Hovering on SBI Loans")]
         public void WhenHoveringOnSBILoans()
         {
+            //creating object of HomePage
             homePage = new HomePage(driver);
+
             autoloans = homePage.Sbiloan();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
 
+            
+
+            //creating object of AutoLoans
             autoloans = new AutoLoans(driver);
-            agriculturalLoan = autoloans.GetlinkofAgri_rural();
 
+            agriculturalLoan = autoloans.GetlinkofAgri_rural();
+            Thread.Sleep(2000);
 
         }
 
@@ -55,6 +61,27 @@ namespace SpecFlowLearning.StepDefinitions
  
 
         }
+
+
+
+        // Scenario-2
+
+        [Given(@"Type in end point of Application")]
+        public void TypeinendpointofApplication()
+        {
+            driver.Url = "https://www.onlinesbi.sbi/#";
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+        }
+
+        [Then(@"Click on the Login button")]
+        public void ClickontheLoginbutton()
+        {
+            driver.FindElement(By.XPath("//a[@href='https://retail.onlinesbi.sbi/retail/login.htm']")).Click();
+
+        }
+
+
+
 
 
 

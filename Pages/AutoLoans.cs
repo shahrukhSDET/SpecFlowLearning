@@ -49,13 +49,16 @@ namespace SpecFlowLearning.Pages
 
             //}
 
+
+
             driver.FindElement(By.Id("3")).Click();
 
             string title = driver.Title;
             TestContext.WriteLine("title of page is " + title);
             Assert.AreEqual("Get Agricultural & Rural Banking Help Online in India | SBI - Agri & Rural", driver.Title);
-            
-            
+            IWebElement get_text = driver.FindElement(By.XPath("//div[@class='card-header sbi-acr-card-header d-none d-lg-block d-xl-block']"));
+            string get_text1 = get_text.Text;
+            Console.WriteLine("The text of the element is " + get_text1);  
             return new AgriculturalLoan(driver);
 
             
